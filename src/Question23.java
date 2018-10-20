@@ -46,4 +46,8 @@ public class Question23 {
 
         return p1;
     }
+
+    public static void main(String[] args) {
+
+    }
 }
