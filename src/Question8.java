@@ -1,18 +1,18 @@
 public class Question8 {
-    public BinaryTreeNode getNext(BinaryTreeNode node){
+    public TreeNode getNext(TreeNode node){
         if (node == null)
             return null;
-        BinaryTreeNode next = null;
+        TreeNode next = null;
         if (node.right != null){
-            BinaryTreeNode right = node.right;
+            TreeNode right = node.right;
             while (right.left != null){
                 right = right.left;
             }
             next = right;
         }
         else if (node.parent != null){
-            BinaryTreeNode current = node;
-            BinaryTreeNode parent = node.parent;
+            TreeNode current = node;
+            TreeNode parent = node.parent;
             while (parent != null && current == parent.right){
                 current = parent;
                 parent = parent.parent;
