@@ -2,6 +2,9 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Question3 {
+    /*
+    找出数组中重复的数字  在一个长度为 n 的数组里 所有数字的范围 0 - n-1
+     */
     public boolean duplicate(int[] numbers, int length, int[] duplication){
         if (numbers == null || numbers.length == 0)
             return false;
