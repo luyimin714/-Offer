@@ -23,4 +23,33 @@ public class Test {
             return false;
         return tree1HasTree2(root1.left, root2.left) && tree1HasTree2(root1.right, root2.right);
     }
+
+    public void permutation(String str) {
+        if (str == null)
+            return;
+        permutation(str.toCharArray(), 0);
+    }
+
+    private void permutation(char[] str, int begin) {
+        if (begin == str.length) {
+            System.out.println(String.valueOf(str));
+        } else {
+            for (int i = begin; i < str.length; i++) {
+                swap(str, i, begin);
+                permutation(str, begin + 1);
+                swap(str, i, begin);
+            }
+        }
+    }
+
+    private void swap(char[] chars, int i, int j) {
+        char temp = chars[i];
+        chars[i] = chars[j];
+        chars[j] = temp;
+    }
+
+    public static void main(String[] args) {
+        Test print = new Test();
+        print.permutation("abc");
+    }
 }
