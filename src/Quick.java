@@ -11,6 +11,9 @@ public class Quick {
     }
 
     private static int partition(int[] a, int lo, int hi) {
+        if (lo == hi)
+            return lo;
+
         int i = lo, j = hi + 1;
         int v = a[lo];
         while (true) {
@@ -30,12 +33,16 @@ public class Quick {
     }
 
     public static void main(String[] args) {
-        int[] a = {2,2,7,9,0,1,4,6,6,8};
+        int[] a = {2, 2, 7, 9, 0, 1, 4, 6, 6, 8};
+
         for (int i = 0; i < a.length; i++) {
             System.out.print(a[i] + " ");
         }
+
         System.out.println();
+
         sort(a, 0, a.length-1);
+
         for (int i = 0; i < a.length; i++) {
             System.out.print(a[i] + " ");
         }

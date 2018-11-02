@@ -1,7 +1,29 @@
 public class Question39 {
+    public int majorityElement(int[] nums) {
+        if (checkInvalidArray(nums))
+            return 0;
+
+        int res = nums[0];
+        int count = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (count == 0) {
+                res = nums[i];
+                count++;
+            } else if (nums[i] == res)
+                count++;
+            else
+                count--;
+        }
+
+        if (!checkMoreThanHalf(nums, res))
+            res = 0;
+
+        return res;
+    }
+
     private boolean inputInvalid = false;
 
-    public int majorityElement(int[] nums) {
+    public int majorityElement2(int[] nums) {
         if (checkInvalidArray(nums))
             return 0;
 
@@ -35,8 +57,8 @@ public class Question39 {
 
     private boolean checkMoreThanHalf(int[] nums, int num) {
         int times = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == num)
+        for (int n : nums) {
+            if (n == num)
                 times++;
         }
 
@@ -49,26 +71,26 @@ public class Question39 {
         return isMoreThanHalf;
     }
 
-    private int partition(int[] a, int lo, int hi){
+    private int partition(int[] nums, int lo, int hi){
         if (lo == hi)
             return lo;
 
         int i = lo, j = hi + 1;
-        int v = a[lo];
+        int v = nums[lo];
         while (true) {
-            while (a[++i] < v) if (i == hi) break;
-            while (v < a[--j]) if (j == lo) break;
+            while (nums[++i] < v) if (i == hi) break;
+            while (v < nums[--j]) if (j == lo) break;
             if (i >= j) break;
-            swap(a, i, j);
+            swap(nums, i, j);
         }
-        swap(a, lo, j);
+        swap(nums, lo, j);
         return j;
     }
 
-    private static void swap(int[] a, int i, int j){
-        int t = a[i];
-        a[i] = a[j];
-        a[j] = t;
+    private static void swap(int[] nums, int i, int j){
+        int t = nums[i];
+        nums[i] = nums[j];
+        nums[j] = t;
     }
 
     private int partition2(int[] nums, int lo, int hi) {
