@@ -3,11 +3,11 @@ import java.util.List;
 import java.util.TreeSet;
 
 public class Question40 {
-    /*****************************************************************
-        Java中的TreeSet类实现了红黑树的功能，底层是通过TreeMap实现的，
-        TreeSet中的数据会按照插入数据自动升序排列（按自然顺序）
-     *****************************************************************/
     public static List<Integer> getLeastNumbers2(int[] nums, int k) {
+        /********************************************************
+         Java中的TreeSet类实现了红黑树的功能，底层是通过TreeMap实现的，
+         TreeSet中的数据会按照插入数据自动升序排列（按自然顺序）
+         ********************************************************/
         if (nums == null || k > nums.length || nums.length <= 0 || k <= 0)
             return new ArrayList<>();
 
