@@ -1,4 +1,8 @@
 public class Question43 {
+//    public int NumberOf1Between1AndN_Solution(int n) {
+//        int count = 0;
+//    }
+
     public int countDigitOne(int n) {
         if (n <= 0)
             return 0;
@@ -8,9 +12,6 @@ public class Question43 {
     }
 
     private int numOf1(String str) {
-        if (str.length() == 0)
-            return 0;
-
         int first = str.charAt(0) - '0';
         int length = str.length();
 
@@ -56,12 +57,12 @@ public class Question43 {
     public static void main(String[] args) {
         Question43 question43 = new Question43();
         long start = System.nanoTime();
-        int num1 = question43.NaiveCountDigitOne(824883294);
+        int num1 = question43.NaiveCountDigitOne(500000000);
         long end = System.nanoTime();
         System.out.println(num1 + " " + (end - start) + "ns");
 
         start = System.nanoTime();
-        num1 = question43.countDigitOne(824883294);
+        num1 = question43.countDigitOne(500000000);  //824883294
         end = System.nanoTime();
         System.out.println(num1 + " " + (end - start) + "ns");
     }

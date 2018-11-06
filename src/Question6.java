@@ -1,25 +1,33 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 public class Question6 {
-    public static void PrintListReverselyIteratively(ListNode head){
+    /******************************************************************
+        从尾到头打印链表
+     ******************************************************************/
+    public static void PrintListReverselyIteratively(ListNode head) {
         Stack<ListNode> stack = new Stack<>();
+        //List<Integer> list = new ArrayList<>();
 
         ListNode p = head;
-        while(p != null){
+        while(p != null) {
             stack.push(p);
             p = p.next;
         }
 
-        while (!stack.empty()){
+        while (!stack.empty()) {
             p = stack.peek();
             System.out.println(p.val);
+            //list.add(p.val);
             stack.pop();
         }
+        //return list;
     }
 
-    public static void PrintListReverselyRecursively(ListNode head){
-        if (head != null){
-            if (head.next != null){
+    public static void PrintListReverselyRecursively(ListNode head) {
+        if (head != null) {
+            if (head.next != null) {
                 PrintListReverselyRecursively(head.next);
             }
             System.out.println(head.val);
