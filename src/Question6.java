@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class Question6 {
     /******************************************************************
-        从尾到头打印链表
+     *   从尾到头打印链表
      ******************************************************************/
     public static void PrintListReverselyIteratively(ListNode head) {
         Stack<ListNode> stack = new Stack<>();
