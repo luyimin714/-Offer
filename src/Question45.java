@@ -20,7 +20,7 @@ public class Question45 {
         Arrays.sort(s_num, new Comparator<String>() {
             @Override
             public int compare(String o1, String o2) {
-                //当返回值>0 即 (s1 > s2) 即 (o1 + o2 > o2 + o1) 时
+                // 当返回值>0 即 (s1 > s2) 即 (o1 + o2 > o2 + o1) 时
                 // 即 o2 和 o1 组成的数更小，而 o2 在 o1 后面时
                 // 即 o1 和 o2 组成的数更大，而 o1 在 o2 前面时
                 // 进行交换，即排序
@@ -48,5 +48,9 @@ public class Question45 {
         System.out.println(s1.compareTo(s1));
         System.out.println(s1.compareTo(s2));
         System.out.println(s1.compareTo(s3));
+
+        int[] nums = {3, 32, 321};
+        Question45 test = new Question45();
+        System.out.println(test.PrintMinNumber(nums));
     }
 }
