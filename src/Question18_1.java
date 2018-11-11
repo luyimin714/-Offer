@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Question18_1 {
     /****************************************************************
      *  删除链表中重复的结点
@@ -62,5 +64,22 @@ public class Question18_1 {
         ListNode head = new ListNode(1);
         head.next = new ListNode(2);
         head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(3);
+        head.next.next.next.next = new ListNode(4);
+        head.next.next.next.next.next = new ListNode(4);
+        head.next.next.next.next.next.next = new ListNode(5);
+        ListNode cur = head;
+        while (cur != null) {
+            System.out.print(cur.val + "->");
+            cur = cur.next;
+        }
+        System.out.println();
+        Question18_1 test = new Question18_1();
+        head = test.deleteDuplicates(head);
+        cur = head;
+        while (cur != null) {
+            System.out.print(cur.val + "->");
+            cur = cur.next;
+        }
     }
 }
