@@ -1,4 +1,4 @@
-public class Queston50_1 {
+public class Question50_1 {
     /******************************************************************
      *              字符流中第一个不重复的字符
      *  请实现一个函数用来找出字符流中第一个只出现一次的字符。
@@ -8,7 +8,7 @@ public class Queston50_1 {
     private int[] occurrence = new int[256];
     private int index;
 
-    public Queston50_1() {
+    public Question50_1() {
         for (int i = 0; i < 256; i++) {
             occurrence[i] = -1;
         }
@@ -38,7 +38,7 @@ public class Queston50_1 {
     }
 
     public static void main(String[] args) {
-        Queston50_1 test = new Queston50_1();
+        Question50_1 test = new Question50_1();
         test.Insert('g');
         System.out.print(test.FirstAppearingOnce());
         test.Insert('o');

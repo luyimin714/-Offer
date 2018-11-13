@@ -9,7 +9,7 @@ public class Question39 {
             if (count == 0) {
                 res = nums[i];
                 count++;
-            } else if (nums[i] == res)
+            } else if  (nums[i] == res)
                 count++;
             else
                 count--;
