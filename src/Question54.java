@@ -10,9 +10,9 @@ public class Question54 {
     /*
      * LeetCode
      */
+    //递归
     private static int number = 0;
     private static int count = 0;
-
     public int kthSmallest(TreeNode root, int k) {
         count = k;
         helper(root);
@@ -34,7 +34,7 @@ public class Question54 {
             helper(node.right);
     }
 
-    //迭代版本(基于二叉树的中序遍历)
+    //迭代(基于二叉树的中序遍历)
     public int kthSmallest2(TreeNode root, int k) {
         Stack<TreeNode> stack = new Stack<>();
         TreeNode cur = root;
