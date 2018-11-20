@@ -40,6 +40,5 @@ public class Question58_1 {
 
     public static void main(String[] args) {
         System.out.println(new Question58_1().LeftRotateString("abcdefg", 2));
-        Queue<Integer> queue = new LinkedList<>();
     }
 }
