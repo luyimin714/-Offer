@@ -83,6 +83,6 @@ public class Question60 {
         Question60 test = new Question60();
         test.printProbability1(5);
         System.out.println();
-        test.printProbability2(10);
+        test.printProbability2(5);
     }
 }
