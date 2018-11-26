@@ -8,7 +8,7 @@ public class Question22 {
 
         ListNode fast = head;
         ListNode slow = head;
-        for (int i = 1; i <= k - 1; i++) {  //从头节点开始跳，跳k - 1步
+        for (int i = 1; i <= k - 1; i++) {  //从头节点开始跳，跳k - 1步, k - 1是fast节点和slow节点之间的间隔
             if (fast.next == null)
                 return null;
             fast = fast.next;
@@ -32,9 +32,9 @@ public class Question22 {
         ListNode fast = dummy;
         ListNode slow = dummy;
 
-        for (int i = 1; i <= n; i++) {  //从头节点的前一个节点开始，跳n步，对于fast来说，最终位置是尾节点，与上面的情况一样
-            if (fast.next == null)      //而从dummy开始跳，slow却比上面的情况少跳了一步，恰好位于待删除节点的前一个节点
-                return null;            //（这两种情况，第二个循环，fast都是从倒数第n - 1个节点开始跳，因此跳的步数是一样的）
+        for (int i = 1; i <= n; i++) {  //fast节点和slow节点之间的间隔为n，比上面多一个节点，使得slow节点
+            if (fast.next == null)      //恰好位于待删除节点的前面
+                return null;
             fast = fast.next;
         }
 
