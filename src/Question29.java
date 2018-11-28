@@ -2,6 +2,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Question29 {
+    /*
+     *  顺时针打印矩阵
+     *  输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字
+     */
     public List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> list = new ArrayList<>();
 
@@ -24,14 +28,14 @@ public class Question29 {
             }
             colEnd--;
 
-            if (rowBegin <= rowEnd) {
+            if (rowBegin <= rowEnd) { //注意边界条件 <=
                 for (int i = colEnd; i >= colBegin; i--) {
                     list.add(matrix[rowEnd][i]);
                 }
             }
             rowEnd--;
 
-            if (colBegin <= colEnd) {
+            if (colBegin <= colEnd) { //注意边界条件 <=
                 for (int i = rowEnd; i >= rowBegin; i--) {
                     list.add(matrix[i][colBegin]);
                 }

@@ -1,4 +1,9 @@
 public class Question24 {
+    /*
+     *         反转链表
+     * 输入一个链表，反转链表后，输出新链表的表头。
+     */
+    //剑指Offer
     public ListNode reverseList(ListNode head) {
         ListNode reverseHead = null;
         ListNode cur = head;
@@ -17,7 +22,8 @@ public class Question24 {
         return reverseHead;
     }
 
-    public ListNode InPlaceReverseList(ListNode head) {
+    //LeetCode
+    public ListNode inPlaceReverseList(ListNode head) {
         ListNode pre = null;
         while (head != null) {
             ListNode next = head.next;
@@ -29,6 +35,7 @@ public class Question24 {
         return pre;
     }
 
+    //递归
     public ListNode reverseListRecursively(ListNode head) {
         return helper(head, null);
     }
