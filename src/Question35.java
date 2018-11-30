@@ -1,46 +1,48 @@
 public class Question35 {
     public RandomListNode copyRandomList(RandomListNode head) {
-        RandomListNode iter = head;
+        RandomListNode cur = head;
         RandomListNode next;
 
-        while (iter != null) {
-            next = iter.next;
+        //1.根据原始链表的每个节点N创建对应的N'，并将N连接在N的后面
+        while (cur != null) {
+            next = cur.next;
 
-            RandomListNode copy = new RandomListNode(iter.label);
-            iter.next = copy;
+            RandomListNode copy = new RandomListNode(cur.label);
+            cur.next = copy;
             copy.next = next;
 
-            iter = next;
+            cur = next;
         }
-
-        iter = head;
-        while (iter != null) {
-            if (iter.random != null) {
-                iter.next.random = iter.random.next;
+        //2.设置复制出来的节点的random指针
+        cur = head;
+        while (cur != null) {
+            if (cur.random != null) {
+                cur.next.random = cur.random.next;
             }
-            iter = iter.next.next;
+            cur = cur.next.next;
         }
-
-        iter = head;
+        //3.把这个长链表拆成两个链表
+        //奇数位置：原始链表  偶数位置：复制出来的链表
+        cur = head;
         RandomListNode dummy = new RandomListNode(0);
-        RandomListNode copy;
-        RandomListNode copyIter = dummy;
+        RandomListNode copyNext;
+        RandomListNode copyCur = dummy;
 
-        while (iter != null) {
-            next = iter.next.next;
+        while (cur != null) {
+            next = cur.next.next;
+            copyNext = cur.next;
 
-            copy = iter.next;
-            copyIter.next = copy;
-            copyIter = copy;
+            copyCur.next = copyNext;
+            copyCur = copyNext;
 
-            iter.next = next;
-
-            iter = next;
+            cur.next = next;
+            cur = next;
         }
 
         return dummy.next;
     }
 
+    //剑指Offer
     public RandomListNode copyRandomList2(RandomListNode head) {
         CloneNodes(head);
         ConnectRandomNode(head);
@@ -92,9 +94,5 @@ public class Question35 {
         }
 
         return cloneHead;
-    }
-
-    public static void main(String[] args) {
-
     }
 }
