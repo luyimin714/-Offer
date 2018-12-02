@@ -1,5 +1,22 @@
 public class Question23_1 {
-    public boolean hasCycle(ListNode head) {
+    /*
+     *  给定一个链表，判断链表中是否有环。
+     */
+    //leetcode
+    public boolean hasCycle1(ListNode head) {
+        if (head == null) return false;
+        ListNode fast = head;
+        ListNode slow = head;
+        while (fast.next != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) return true;
+        }
+        return false;
+    }
+
+    //剑指Offer
+    public boolean hasCycle2(ListNode head) {
         if (head == null)
             return false;
 

@@ -1,4 +1,9 @@
 public class Question23 {
+    /*
+     * 链表中环的入口结点
+     * 给一个链表，若其中包含环，请找出该链表的环的入口结点，否则，输出null。
+     */
+    //leetcode
     public ListNode detectCycle(ListNode head) {
         if (head == null || head.next == null)
             return null;
@@ -31,50 +36,33 @@ public class Question23 {
         return slow;
     }
 
+    //剑指offer
     public ListNode detectCycle2(ListNode head) {
-        ListNode meet = hasCycle(head);  //meetingNode(head);
+        ListNode meet = meetingNode(head);  //hasCycle(head)
 
         if (meet == null)
             return null;
 
-        ListNode p1 = meet;
-
+        //得到环中节点的数目
         int len = 1;
-
+        ListNode p1 = meet;
         while (p1.next != meet) {
             p1 = p1.next;
             len++;
         }
-
+        //先移动p1,次数为环中节点的数目
         p1 = head;
         for (int i = 0; i < len; i++) {
             p1 = p1.next;
         }
-
+        //再移动p1和p2
         ListNode p2 = head;
-
         while (p1 != p2) {
             p1 = p1.next;
             p2 = p2.next;
         }
 
         return p1;
-    }
-
-    private ListNode hasCycle(ListNode head) {
-        if (head == null)
-            return null;
-
-        ListNode walker = head;
-        ListNode runner = head;
-        while (runner.next != null && runner.next.next != null) {
-            walker = walker.next;
-            runner = runner.next.next;
-            if (walker == runner)
-                return walker;
-        }
-
-        return null;
     }
 
     private ListNode meetingNode(ListNode head) {
@@ -98,9 +86,5 @@ public class Question23 {
         }
 
         return null;
-    }
-
-    public static void main(String[] args) {
-
     }
 }

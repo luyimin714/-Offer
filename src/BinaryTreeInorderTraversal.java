@@ -12,20 +12,19 @@ public class BinaryTreeInorderTraversal {
      */
     public List<Integer> inorderTraversal1(TreeNode root) {
         List<Integer> inorder = new ArrayList<>();
-
         helper(root, inorder);
         return inorder;
     }
 
-    private void helper(TreeNode root, List<Integer> inorder) {
-        if (root != null) {
-            if (root.left != null)
-                helper(root.left, inorder);
+    private void helper(TreeNode cur, List<Integer> inorder) {
+        if (cur != null) {
+            if (cur.left != null)
+                helper(cur.left, inorder);
 
-            inorder.add(root.val);
+            inorder.add(cur.val);
 
-            if (root.right != null)
-                helper(root.right, inorder);
+            if (cur.right != null)
+                helper(cur.right, inorder);
         }
     }
 
@@ -60,7 +59,6 @@ public class BinaryTreeInorderTraversal {
         root.right = new TreeNode(7);
         root.right.left = new TreeNode(6);
         root.right.right = new TreeNode(8);
-
 
         BinaryTreeInorderTraversal test = new BinaryTreeInorderTraversal();
         System.out.println(test.inorderTraversal1(root).toString());

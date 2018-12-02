@@ -2,8 +2,7 @@ public class Question35 {
     public RandomListNode copyRandomList(RandomListNode head) {
         RandomListNode cur = head;
         RandomListNode next;
-
-        //1.根据原始链表的每个节点N创建对应的N'，并将N连接在N的后面
+        //1.根据原始链表的每个节点N创建对应的N'，并将N'连接在N的后面
         while (cur != null) {
             next = cur.next;
 
