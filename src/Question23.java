@@ -14,20 +14,19 @@ public class Question23 {
 
         while (slow != null && fast != null) {
             slow = slow.next;
-            if (fast.next == null)
-                return null;
+            if (fast.next == null) return null;
             fast = fast.next.next;
+
             if (fast == slow) {
                 isCycle = true;
                 break;
             }
         }
 
-        if (!isCycle)
-            return null;
+        if (!isCycle) return null;
 
+        //slow从头开始走,fast从相遇的节点开始走，刚好会在入口节点处相遇
         slow = head;
-
         while (slow != fast) {
             slow = slow.next;
             fast = fast.next;

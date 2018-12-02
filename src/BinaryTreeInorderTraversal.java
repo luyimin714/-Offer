@@ -7,9 +7,7 @@ public class BinaryTreeInorderTraversal {
      * 二叉树的中序遍历
      */
 
-    /*
-     * 递归
-     */
+    //递归
     public List<Integer> inorderTraversal1(TreeNode root) {
         List<Integer> inorder = new ArrayList<>();
         helper(root, inorder);
@@ -21,6 +19,7 @@ public class BinaryTreeInorderTraversal {
             if (cur.left != null)
                 helper(cur.left, inorder);
 
+            //do something
             inorder.add(cur.val);
 
             if (cur.right != null)
@@ -28,9 +27,7 @@ public class BinaryTreeInorderTraversal {
         }
     }
 
-    /*
-     * 迭代
-     */
+    //迭代
     public List<Integer> inorderTraversal2(TreeNode root) {
         List<Integer> inorder = new ArrayList<>();
 
