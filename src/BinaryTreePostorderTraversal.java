@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Stack;
 
 public class BinaryTreePostorderTraversal {
     /*
@@ -21,5 +23,26 @@ public class BinaryTreePostorderTraversal {
             //do something
             list.add(cur.val);
         }
+    }
+
+    //迭代
+    public List<Integer> postorderTraversal2(TreeNode root) {
+        LinkedList<Integer> list = new LinkedList<>();
+
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode cur = root;
+
+        while (cur != null || !stack.empty()) {
+            while (cur != null) {
+                stack.push(cur);
+                list.addFirst(cur.val);
+                cur = cur.right;
+            }
+
+            cur = stack.pop();
+            cur = cur.left;
+        }
+
+        return list;
     }
 }

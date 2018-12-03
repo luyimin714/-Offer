@@ -9,9 +9,9 @@ public class BinaryTreeInorderTraversal {
 
     //递归
     public List<Integer> inorderTraversal1(TreeNode root) {
-        List<Integer> inorder = new ArrayList<>();
-        helper(root, inorder);
-        return inorder;
+        List<Integer> list = new ArrayList<>();
+        helper(root, list);
+        return list;
     }
 
     private void helper(TreeNode cur, List<Integer> inorder) {
@@ -29,7 +29,7 @@ public class BinaryTreeInorderTraversal {
 
     //迭代
     public List<Integer> inorderTraversal2(TreeNode root) {
-        List<Integer> inorder = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
 
         Stack<TreeNode> stack = new Stack<>();
         TreeNode cur = root;
@@ -41,11 +41,11 @@ public class BinaryTreeInorderTraversal {
             }
 
             cur = stack.pop();
-            inorder.add(cur.val);
+            list.add(cur.val);
             cur = cur.right;
         }
 
-        return inorder;
+        return list;
     }
 
     public static void main(String[] args) {
