@@ -17,8 +17,8 @@ public class BinaryTreePreorderTraversal {
             //do something
             list.add(cur.val);
 
-            if (cur.left != null) helper(cur.left, list);
-            if (cur.right != null) helper(cur.right, list);
+            helper(cur.left, list);
+            helper(cur.right, list);
         }
     }
 

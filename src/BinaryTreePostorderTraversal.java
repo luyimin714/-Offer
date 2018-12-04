@@ -17,8 +17,8 @@ public class BinaryTreePostorderTraversal {
 
     private void helper(TreeNode cur, List<Integer> list) {
         if (cur != null) {
-            if (cur.left != null) helper(cur.left, list);
-            if (cur.right != null) helper(cur.right, list);
+            helper(cur.left, list);
+            helper(cur.right, list);
 
             //do something
             list.add(cur.val);

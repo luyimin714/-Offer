@@ -16,14 +16,12 @@ public class BinaryTreeInorderTraversal {
 
     private void helper(TreeNode cur, List<Integer> inorder) {
         if (cur != null) {
-            if (cur.left != null)
-                helper(cur.left, inorder);
+            helper(cur.left, inorder);
 
             //do something
             inorder.add(cur.val);
 
-            if (cur.right != null)
-                helper(cur.right, inorder);
+            helper(cur.right, inorder);
         }
     }
 

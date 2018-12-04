@@ -13,10 +13,10 @@ public class Question36 {
             head = head.left;
         return head;
     }
-
+    //利用二叉树中序遍历
     private void helper(TreeNode cur) {
         if (cur != null) {
-            if (cur.left != null) {
+            if (cur.left != null) { //不加判断也可以
                 helper(cur.left);
             }
             //do something
@@ -25,7 +25,7 @@ public class Question36 {
                 pre.right = cur;
             pre = cur;
 
-            if (cur.right != null) {
+            if (cur.right != null) { //不加判断也可以
                 helper(cur.right);
             }
         }

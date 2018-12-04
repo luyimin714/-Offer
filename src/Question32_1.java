@@ -19,7 +19,52 @@ public class Question32_1 {
      * 返回第一个元素  queue.element();
      * 返回第一个元素  queue.peek();
      */
-    public List<List<Integer>> levelOrder1(TreeNode root) {
+    //递归 LeetCode
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> res = new ArrayList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+
+        if (root == null) return res;
+
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            int levelNum = queue.size();
+            List<Integer> list = new ArrayList<>();
+            for (int i = 0; i < levelNum; i++) {
+                if (queue.peek().left != null)
+                    queue.offer(queue.peek().left);
+                if (queue.peek().right != null)
+                    queue.offer(queue.peek().right);
+                list.add(queue.poll().val);
+            }
+            res.add(list);
+        }
+
+        return res;
+    }
+
+    //递归
+    public List<List<Integer>> levelOrder2(TreeNode root) {
+        List<List<Integer>> res = new ArrayList<>();
+        helper(root, res, 0);
+        return res;
+    }
+    //利用二叉树的先序遍历
+    private void helper(TreeNode cur, List<List<Integer>> res, int level) {
+        if (cur == null) return;
+        if (res.size() <= level) {
+            List<Integer> newLevel = new ArrayList<>();
+            res.add(newLevel);
+        }
+
+        res.get(level).add(cur.val);
+
+        helper(cur.left, res, level + 1);
+        helper(cur.right, res, level + 1);
+    }
+
+    //剑指offer
+    public List<List<Integer>> levelOrder3(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
         Queue<TreeNode> queue = new LinkedList<>();
 
@@ -59,94 +104,5 @@ public class Question32_1 {
         }
 
         return res;
-    }
-
-    public List<List<Integer>> levelOrder2(TreeNode root) {
-        List<List<Integer>> res = new ArrayList<>();
-        Queue<TreeNode> queue = new LinkedList<>();
-
-        if (root == null)
-            return res;
-
-        queue.offer(root);
-        while (!queue.isEmpty()) {
-            int levelNum = queue.size();
-            List<Integer> list = new ArrayList<>();
-            for (int i = 0; i < levelNum; i++) {
-                if (queue.peek().left != null)
-                    queue.offer(queue.peek().left);
-                if (queue.peek().right != null)
-                    queue.offer(queue.peek().right);
-                list.add(queue.poll().val);
-            }
-            res.add(list);
-        }
-
-        return res;
-    }
-
-    public static void print(TreeNode root) {
-        Queue<TreeNode> queue = new LinkedList<>();
-
-        if (root == null)
-            return;
-
-        queue.offer(root);
-        while (!queue.isEmpty()) {
-            int levelNum = queue.size();
-            for (int i = 0; i < levelNum; i++) {
-                if (queue.peek().left != null)
-                    queue.offer(queue.peek().left);
-                if (queue.peek().right != null)
-                    queue.offer(queue.peek().right);
-                System.out.print(queue.poll().val + " ");
-            }
-            System.out.println();
-        }
-    }
-
-    public static void print2(TreeNode root) {
-        if (root == null)
-            return;
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.offer(root);
-        int nextLevel = 0;
-        int toBePrint = 1;
-        while (!queue.isEmpty()) {
-            TreeNode node = queue.peek();
-            System.out.print(node.val + " ");
-            if (node.left != null) {
-                queue.offer(node.left);
-                nextLevel++;
-            }
-            if (node.right != null) {
-                queue.offer(node.right);
-                nextLevel++;
-            }
-            queue.poll();
-            toBePrint--;
-            if (toBePrint == 0) {
-                System.out.println();
-                toBePrint = nextLevel;
-                nextLevel = 0;
-            }
-        }
-    }
-
-    public static void main(String[] args) {
-        TreeNode root = new TreeNode(8);
-
-        root.left = new TreeNode(6);
-        root.right = new TreeNode(10);
-
-        root.left.left = new TreeNode(5);
-        root.left.right = new TreeNode(7);
-
-        root.right.left = new TreeNode(9);
-        root.right.right = new TreeNode(11);
-
-        print(root);
-
-        print2(root);
     }
 }
