@@ -3,19 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="cb78821d-4f57-402c-b3f6-5e9d8f3dee40" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Offer/BinaryTreeInorderTraversal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Offer/BinaryTreeInorderTraversal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Offer/Question23.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Offer/Question23.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Offer/Question23_1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Offer/Question23_1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Offer/Question28.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Offer/Question28.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Offer/Question3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Offer/Question3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Offer/Question32_1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Offer/Question32_1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Offer/Question32_2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Offer/Question32_2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Offer/Question36.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Offer/Question36.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Offer/Question38.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Offer/Question38.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Offer/Question4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Offer/Question4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Offer/Question62.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Offer/Question62.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Offer/Question39.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Offer/Question39.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Offer/Quick.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Offer/Quick.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Question32_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Question32_2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Question38.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Question38.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Question62.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Question62.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Question39.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Question39.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Quick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Quick.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,10 +63,10 @@
     <session id="-2017779155">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="77" />
+          <entry key="project.closed" value="78" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="2" />
-          <entry key="project.open.time.10" value="9" />
+          <entry key="project.open.time.10" value="10" />
           <entry key="project.open.time.11" value="4" />
           <entry key="project.open.time.12" value="4" />
           <entry key="project.open.time.13" value="1" />
@@ -80,7 +74,7 @@
           <entry key="project.open.time.7" value="9" />
           <entry key="project.open.time.8" value="26" />
           <entry key="project.open.time.9" value="19" />
-          <entry key="project.opened" value="78" />
+          <entry key="project.opened" value="79" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -93,7 +87,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="2" />
-          <entry key="JAVA" value="218" />
+          <entry key="JAVA" value="226" />
           <entry key="Kotlin" value="1" />
         </counts>
       </usages-collector>
@@ -107,7 +101,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="38553" />
+          <entry key="JAVA" value="40007" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -118,11 +112,71 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Question38.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Question39.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="25" column="31" lean-forward="true" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+            <state relative-caret-position="874">
+              <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Question32.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Question32_1.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="893">
+              <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Question32_2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1102">
+              <caret line="58" column="10" selection-start-line="58" selection-start-column="10" selection-end-line="58" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RandomListNode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Quick.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/Arrays.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="70813">
+              <caret line="3798" column="30" selection-start-line="3798" selection-start-column="30" selection-end-line="3798" selection-end-column="30" />
+              <folding>
+                <element signature="e#177013#177014#0" expanded="true" />
+                <element signature="e#177054#177055#0" expanded="true" />
+                <element signature="e#177353#177354#0" expanded="true" />
+                <element signature="e#177410#177411#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -150,8 +204,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Question54.java" />
-        <option value="$PROJECT_DIR$/src/Question53.java" />
         <option value="$PROJECT_DIR$/src/Question6.java" />
         <option value="$PROJECT_DIR$/src/Question5.java" />
         <option value="$PROJECT_DIR$/src/Question55.java" />
@@ -198,9 +250,11 @@
         <option value="$PROJECT_DIR$/src/BinaryTreePreorderTraversal.java" />
         <option value="$PROJECT_DIR$/src/Question36.java" />
         <option value="$PROJECT_DIR$/src/Question32_1.java" />
-        <option value="$PROJECT_DIR$/src/Question32_2.java" />
-        <option value="$PROJECT_DIR$/src/Question38.java" />
         <option value="$PROJECT_DIR$/src/Question62.java" />
+        <option value="$PROJECT_DIR$/src/Question38.java" />
+        <option value="$PROJECT_DIR$/src/Quick.java" />
+        <option value="$PROJECT_DIR$/src/Question39.java" />
+        <option value="$PROJECT_DIR$/src/Question32_2.java" />
       </list>
     </option>
   </component>
@@ -216,9 +270,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="667" />
-    <option name="width" value="1268" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="666" />
+    <option name="width" value="1269" />
     <option name="height" value="1032" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -243,8 +297,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -261,12 +313,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543976042637" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544064610401" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../LeetCode" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -287,16 +341,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.BinaryTreeInorderTraversal">
+  <component name="RunManager" selected="Application.Quick">
     <configuration name="BinaryTreeInorderTraversal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="BinaryTreeInorderTraversal" />
-      <module name="Offer" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Question32_1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Question32_1" />
       <module name="Offer" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -316,27 +363,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Question65" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Question65" />
+    <configuration name="Question39" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Question39" />
+      <module name="Offer" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Quick" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Quick" />
       <module name="Offer" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Question65" />
-      <item itemvalue="Application.Question32_1" />
       <item itemvalue="Application.Question33" />
       <item itemvalue="Application.BinaryTreeInorderTraversal" />
       <item itemvalue="Application.Question38" />
+      <item itemvalue="Application.Question39" />
+      <item itemvalue="Application.Quick" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.BinaryTreeInorderTraversal" />
+        <item itemvalue="Application.Quick" />
+        <item itemvalue="Application.Question39" />
         <item itemvalue="Application.Question38" />
+        <item itemvalue="Application.BinaryTreeInorderTraversal" />
         <item itemvalue="Application.Question33" />
-        <item itemvalue="Application.Question32_1" />
-        <item itemvalue="Application.Question65" />
       </list>
     </recent_temporary>
   </component>
@@ -469,18 +523,19 @@
       <workItem from="1543845092848" duration="1542000" />
       <workItem from="1543883319232" duration="2740000" />
       <workItem from="1543893722062" duration="6323000" />
-      <workItem from="1543970041021" duration="6181000" />
+      <workItem from="1543970041021" duration="12172000" />
+      <workItem from="1544059900441" duration="4898000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="334686000" />
+    <option name="totallyTimeSpent" value="345575000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49318182" visible="true" weight="0.12611157" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49318182" visible="true" weight="0.22150365" />
       <window_info id="Structure" order="1" sideWeight="0.5068182" side_tool="true" weight="0.23201293" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -489,7 +544,7 @@
       <window_info id="Favorites" order="6" sideWeight="0.50454545" side_tool="true" weight="0.19967663" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.28419182" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25754884" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39964476" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -591,21 +646,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Question50.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/P292_QueueWithMax.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/LinkedList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="84" column="57" lean-forward="true" selection-start-line="84" selection-start-column="57" selection-end-line="84" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/QueueWithMax.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -802,27 +842,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Question32.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Question32_1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="893">
-          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Question32_2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Question64.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -886,13 +905,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/Arrays.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="1337" column="24" selection-start-line="1337" selection-start-column="24" selection-end-line="1337" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/List.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
@@ -945,10 +957,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/Arrays.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70813">
+          <caret line="3798" column="30" selection-start-line="3798" selection-start-column="30" selection-end-line="3798" selection-end-column="30" />
+          <folding>
+            <element signature="e#177013#177014#0" expanded="true" />
+            <element signature="e#177054#177055#0" expanded="true" />
+            <element signature="e#177353#177354#0" expanded="true" />
+            <element signature="e#177410#177411#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Question38.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="25" column="31" lean-forward="true" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+        <state relative-caret-position="840">
+          <caret line="58" column="30" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RandomListNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Quick.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Question39.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="874">
+          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Question32.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Question32_1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="893">
+          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Question32_2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1102">
+          <caret line="58" column="10" selection-start-line="58" selection-start-column="10" selection-end-line="58" selection-end-column="10" />
         </state>
       </provider>
     </entry>

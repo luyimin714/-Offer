@@ -1,7 +1,16 @@
 public class Question39 {
+    /*
+     * 数组中出现次数超过一半的数字
+     * 数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。
+     * 例如输入一个长度为9的数组{1,2,3,2,2,2,5,4,2}。由于数字2在数组中出现了5次，
+     * 超过数组长度的一半，因此输出2。如果不存在则输出0。
+     */
+
+    /*
+     * 解法1:根据数组特点找到的解法
+     */
     public int majorityElement(int[] nums) {
-        if (checkInvalidArray(nums))
-            return 0;
+        if (nums == null || nums.length <= 0) return 0;
 
         int res = nums[0];
         int count = 1;
@@ -9,23 +18,22 @@ public class Question39 {
             if (count == 0) {
                 res = nums[i];
                 count++;
-            } else if  (nums[i] == res)
+            } else if (nums[i] == res)
                 count++;
             else
                 count--;
         }
 
-        if (!checkMoreThanHalf(nums, res))
-            res = 0;
+        if (!checkMoreThanHalf(nums, res)) res = 0;
 
         return res;
     }
 
-    private boolean inputInvalid = false;
-
+    /*
+     * 解法2:基于快速排序partition函数的解法
+     */
     public int majorityElement2(int[] nums) {
-        if (checkInvalidArray(nums))
-            return 0;
+        if (nums == null || nums.length <= 0) return 0;
 
         int middle = nums.length >> 1;
         int start = 0, end = nums.length - 1;
@@ -40,59 +48,42 @@ public class Question39 {
             }
         }
 
-        int result = nums[index];
-        if (!checkMoreThanHalf(nums, result))
-            result = 0;
+        int res = nums[index];
+        if (!checkMoreThanHalf(nums, res)) res = 0;
 
-        return result;
+        return res;
     }
 
-    private boolean checkInvalidArray(int[] nums) {
-        inputInvalid = false;
-        if (nums == null || nums.length <= 0)
-            inputInvalid = true;
-
-        return inputInvalid;
-    }
-
+    //判断是否有数字出现的次数超过数组长度的一半
     private boolean checkMoreThanHalf(int[] nums, int num) {
         int times = 0;
         for (int n : nums) {
-            if (n == num)
-                times++;
+            if (n == num) times++;
         }
 
         boolean isMoreThanHalf = true;
         if (times * 2 <= nums.length) {
-            inputInvalid = true;
             isMoreThanHalf = false;
         }
 
         return isMoreThanHalf;
     }
-
+    //快速排序的partition函数 算法第六版
     private int partition(int[] nums, int lo, int hi){
-        if (lo == hi)
-            return lo;
+        if (lo == hi) return lo;
 
         int i = lo, j = hi + 1;
         int v = nums[lo];
-        while (true) {
-            while (nums[++i] < v) if (i == hi) break;
-            while (v < nums[--j]) if (j == lo) break;
+        while (true) { //指针i和指针j相遇时循环退出
+            while (nums[++i] <= v) if (i == hi) break;
+            while (v <= nums[--j]) if (j == lo) break;
             if (i >= j) break;
             swap(nums, i, j);
         }
         swap(nums, lo, j);
         return j;
     }
-
-    private static void swap(int[] nums, int i, int j){
-        int t = nums[i];
-        nums[i] = nums[j];
-        nums[j] = t;
-    }
-
+    //快速排序的partition函数 剑指Offer
     private int partition2(int[] nums, int lo, int hi) {
         if (nums == null || nums.length <= 0 || lo < 0 || hi >= nums.length)
             return -1;
@@ -113,5 +104,16 @@ public class Question39 {
         swap(nums, small, hi);
 
         return small;
+    }
+
+    private static void swap(int[] nums, int i, int j){
+        int t = nums[i];
+        nums[i] = nums[j];
+        nums[j] = t;
+    }
+
+    public static void main(String[] args) {
+        int[] nums1 = {2, 2, 2, 3, 4, 5};
+        System.out.println(new Question39().checkMoreThanHalf(nums1, 2));
     }
 }

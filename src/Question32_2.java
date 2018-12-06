@@ -2,11 +2,11 @@ import java.util.*;
 
 public class Question32_2 {
     /*
-     * 按之字形顺序打印二叉树
+     * 按之字形顺序打印二叉树 / zigzag / 二叉树的锯齿形层次遍历
      * 请实现一个函数按照之字形打印二叉树，即第一行按照从左到右的顺序打印，
      * 第二层按照从右至左的顺序打印，第三行按照从左到右的顺序打印，其他行以此类推。
      */
-    //递归 LeetCode
+    //解法1:递归 LeetCode
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
         helper(root, res, 0);
@@ -29,7 +29,7 @@ public class Question32_2 {
         helper(cur.right, res, level + 1);
     }
 
-    //迭代 在二叉树的层次遍历基础上修改
+    //解法2:迭代 在二叉树的层次遍历基础上修改
     public List<List<Integer>> zigzagLevelOrder2(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
         if (root == null) return res;
@@ -56,7 +56,7 @@ public class Question32_2 {
         return res;
     }
 
-    //剑指offer
+    //解法3:剑指offer
     public List<List<Integer>> zigzagLevelOrder3(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
 

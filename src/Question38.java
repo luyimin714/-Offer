@@ -22,9 +22,20 @@ public class Question38 {
             res.add(sb.toString());
         } else {
             for (int i = 0; i < chars.length; i++) {
+                /*
+                 * assume permutating [1,2,2,3]. Talking about 2 at index 2,
+                 * we could have been here as part of path: [1->2->2] in which
+                 * case previous 2 at index 1 would be a parent to us so
+                 * used[i-1] = true in this case. However we could also have
+                 * been here as part of path [1---->2] which is a direct path
+                 * from 1. In this case previous 2 at index 1 is not a parent
+                 * of this particular permutation therefore used[i-1] = false
+                 * so that we skip it to avoid duplicates
+                 */
                 if (used[i] || (i > 0 && chars[i] == chars[i-1] && !used[i-1])) continue;
                 used[i] = true;
                 sb.append(chars[i]);
+                System.out.println(sb.toString());
                 backtrack(res, sb, chars, used);
                 used[i] = false;
                 sb.deleteCharAt(sb.length() - 1);
@@ -42,16 +53,16 @@ public class Question38 {
         return res;
     }
 
-    private void permutation(ArrayList<String> res, char[] str, int begin) {
-        if (begin == str.length) {
-            String val = String.valueOf(str);
+    private void permutation(ArrayList<String> res, char[] chars, int begin) {
+        if (begin == chars.length) {
+            String val = String.valueOf(chars);
             if (!res.contains(val))
                 res.add(val);
         } else {
-            for (int i = begin; i < str.length; i++) {
-                swap(str, i, begin);
-                permutation(res, str, begin + 1);
-                swap(str, i, begin);
+            for (int i = begin; i < chars.length; i++) {
+                swap(chars, i, begin);
+                permutation(res, chars, begin + 1);
+                swap(chars, i, begin);
             }
         }
     }
@@ -85,5 +96,10 @@ public class Question38 {
         str.deleteCharAt(str.length() - 1);
         //求n-1个字符中长度为m的组合
         combination(chars, begin + 1, m, str);
+    }
+
+    public static void main(String[] args) {
+        Question38 test = new Question38();
+        test.Permutation("aab");
     }
 }
