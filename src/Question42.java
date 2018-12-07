@@ -1,7 +1,31 @@
 public class Question42 {
-    private boolean invalidInput = false;
+    /*
+     * 连续子数组的最大和
+     * 给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），
+     * 返回其最大和。
+     */
 
+    //Leetcode
     public int maxSubArray(int[] nums) {
+        if (nums == null || nums.length == 0)
+            return 0;
+
+        int[] dp = new int[nums.length];
+        dp[0] = nums[0];
+        int max = dp[0];
+        for (int i = 1; i < nums.length; i++) {
+            if (dp[i - 1] < 0) {
+                dp[i] = nums[i];
+            } else
+                dp[i] = dp[i - 1] + nums[i];
+            max = Math.max(dp[i], max);
+        }
+        return max;
+    }
+
+    //剑指offer
+    private boolean invalidInput = false;
+    public int maxSubArray2(int[] nums) {
         if (nums == null || nums.length == 0) {
             invalidInput = true;
             return 0;
@@ -22,22 +46,6 @@ public class Question42 {
         }
 
         return maxSum;
-    }
-
-    public int dp(int[] nums) {
-        if (nums == null || nums.length == 0) {
-            return 0;
-        }
-
-        int n = nums.length;
-        int[] dp = new int[n];
-        dp[0] = nums[0];
-        int max = dp[0];
-        for (int i = 1; i < n; i++) {
-            dp[i] = nums[i] + (dp[i-1] > 0 ? dp[i - 1] : 0);
-            max = Math.max(max, dp[i]);
-        }
-        return max;
     }
 
     public static void main(String[] args) {

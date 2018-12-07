@@ -19,14 +19,19 @@ public class Question40 {
         if (nums == null || nums.length <= 0 || k > nums.length  || k <= 0)
             return new ArrayList<>();
 
-        TreeSet<Integer> treeSet = new TreeSet<>();
+        TreeSet<Integer> treeSet = new TreeSet<Integer>(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o2.compareTo(o1);
+            }
+        });
 
         for (int num : nums) {
             if (treeSet.size() < k) {
                 treeSet.add(num);
             } else {
-                if (num < treeSet.last()) {
-                    treeSet.pollLast();
+                if (num < treeSet.first()) { //num < 最大的元素
+                    treeSet.pollFirst();  //如果不Override compare则最大的元素为last()
                     treeSet.add(num);
                 }
             }
