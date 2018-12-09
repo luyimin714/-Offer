@@ -1,45 +1,76 @@
+import java.util.Stack;
+
 public class Quick {
-    /**************************************************
-                         快速排序
-     **************************************************/
-    public static void sort(int[] a, int lo, int hi) {
+    /*
+     * 快速排序
+     */
+
+    //递归
+    public static void sort(int[] nums, int lo, int hi) {
         if (hi <= lo) return;
-        int j = partition(a, lo, hi);
-        sort(a, lo, j-1);
-        sort(a, j+1, hi);
+        int j = partition(nums, lo, hi);
+        sort(nums, lo, j-1);
+        sort(nums, j+1, hi);
     }
 
-    private static int partition(int[] a, int lo, int hi) {
+    //非递归
+    public static void sort2(int[] nums, int lo, int hi) {
+        if (hi <= lo) return;
+        Stack<Integer> stack = new Stack<>();
+        stack.push(lo);
+        stack.push(hi);
+        while (!stack.empty()) {
+            hi = stack.pop(); // 先弹出high,再弹出low
+            lo = stack.pop();
+
+            int j = partition(nums, lo, hi);
+
+            if (lo < j - 1) { // 先压low,再压high
+                stack.push(lo);
+                stack.push(j - 1);
+            }
+            if (j + 1 < hi) {
+                stack.push(j + 1);
+                stack.push(hi);
+            }
+        }
+    }
+
+    private static int partition(int[] nums, int lo, int hi) {
         if (lo == hi) return lo;
 
         int i = lo, j = hi + 1;
-        int v = a[lo];
+        int v = nums[lo];
         while (true) {
-            while (a[++i] <= v) if (i == hi) break;
-            while (v <= a[--j]) if (j == lo) break;
+            while (nums[++i] <= v) if (i == hi) break;
+            while (v <= nums[--j]) if (j == lo) break;
             if (i >= j) break;
-            swap(a, i, j);
+            swap(nums, i, j);
         }
-        swap(a, lo, j);
+        swap(nums, lo, j);
         return j;
     }
 
-    private static void swap(int[] a, int i, int j) {
-        int t = a[i];
-        a[i] = a[j];
-        a[j] = t;
+    private static void swap(int[] nums, int i, int j) {
+        int t = nums[i];
+        nums[i] = nums[j];
+        nums[j] = t;
     }
 
     public static void main(String[] args) {
-        int[] a = {2, 2, 7, 9, 0, 1, 4, 6, 6, 8};
-        for (int i = 0; i < a.length; i++)
-            System.out.print(a[i] + " ");
+        int[] nums1 = {2, 2, 7, 9, 0, 1, 4, 6, 6, 8};
+        for (int num : nums1) System.out.print(num + " ");
+        System.out.println();
+        sort(nums1, 0, nums1.length-1);
+        for (int num : nums1) System.out.print(num + " ");
 
         System.out.println();
+        System.out.println();
 
-        sort(a, 0, a.length-1);
-
-        for (int i = 0; i < a.length; i++)
-            System.out.print(a[i] + " ");
+        int[] nums2 = {2, 2, 7, 9, 0, 1, 4, 6, 6, 8};
+        for (int num : nums2) System.out.print(num + " ");
+        System.out.println();
+        sort2(nums2, 0, nums2.length-1);
+        for (int num : nums2) System.out.print(num + " ");
     }
 }
