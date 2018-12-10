@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Stack;
 
 public class Quick {
@@ -59,18 +60,15 @@ public class Quick {
 
     public static void main(String[] args) {
         int[] nums1 = {2, 2, 7, 9, 0, 1, 4, 6, 6, 8};
-        for (int num : nums1) System.out.print(num + " ");
-        System.out.println();
+        System.out.println(Arrays.toString(nums1));
         sort(nums1, 0, nums1.length-1);
-        for (int num : nums1) System.out.print(num + " ");
+        System.out.println(Arrays.toString(nums1));
 
-        System.out.println();
         System.out.println();
 
         int[] nums2 = {2, 2, 7, 9, 0, 1, 4, 6, 6, 8};
-        for (int num : nums2) System.out.print(num + " ");
-        System.out.println();
+        System.out.println(Arrays.toString(nums2));
         sort2(nums2, 0, nums2.length-1);
-        for (int num : nums2) System.out.print(num + " ");
+        System.out.println(Arrays.toString(nums2));
     }
 }

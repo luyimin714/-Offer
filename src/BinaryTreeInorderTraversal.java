@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Stack;
 
 public class BinaryTreeInorderTraversal {
-    /*
+    /**
      * 二叉树的中序遍历
      */
 

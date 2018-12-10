@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Question3_1 {
-    /*
+    /**
      *     不修改数组找出重复的数字
      * 在一个长度为 n+1 的数组中所有的数字都在 1~n 范围内，所以数组中至少有一个数字是重复的。
      * 请至少找出数组中任意一个重复的数字，但不能修改输入的数组。

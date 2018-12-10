@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Stack;
 
 public class BinaryTreePostorderTraversal {
-    /*
+    /**
      * 二叉树的后序遍历
      */
 

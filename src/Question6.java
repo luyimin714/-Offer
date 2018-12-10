@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Stack;
 
 public class Question6 {
-    /*
+    /**
      * 从尾到头打印链表
      * 输入一个链表，按链表值从尾到头的顺序返回一个ArrayList。
      */

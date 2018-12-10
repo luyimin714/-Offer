@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class Merge {
-    /*
+    /**
      * 归并排序1
      */
     public static void sort(int[] nums) {
@@ -47,7 +47,8 @@ public class Merge {
 //                nums[k] = aux[i++];
 //        }
     }
-    /*
+
+    /**
      * 归并排序2
      */
     public static void sort2(int [] nums) {
@@ -87,7 +88,8 @@ public class Merge {
         while (i >= start) nums[k--] = copy[i--];
         while (j >= mid + 1) nums[k--] = copy[j--];
     }
-    /*
+
+    /**
      * 归并排序3
      */
     public static void sort3(int [] nums) {

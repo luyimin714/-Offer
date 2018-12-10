@@ -1,11 +1,11 @@
 import java.math.BigInteger;
 
 public class Question10 {
-    /*********************************************
+    /**
      *              斐波那契数列
      * 输出斐波那契数列的第n项（从0开始，第0项为0）。
      * n<=39
-     *********************************************/
+     */
     public int Fibonacci_newcoder(int n) {
         int[] result = {0, 1};
         if (n < 2)
@@ -48,14 +48,5 @@ public class Question10 {
             res_1 = res;
         }
         return res;
-    }
-
-    public static void main(String[] args) {
-        for (int i = 0; i < 100; i++){
-            System.out.println(i + " " + slowFibonacci(i));
-        }
-//        for (int i = 0; i < 100; i++){
-//            System.out.println(i + " " + Fibonacci(i));
-//        }
     }
 }

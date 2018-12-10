@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class BinaryTreePreorderTraversal {
-    /*
+    /**
      * 二叉树的前序遍历
      */
 
