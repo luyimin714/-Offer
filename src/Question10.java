@@ -21,7 +21,7 @@ public class Question10 {
         return fibN;
     }
 
-    /*
+    /**
      * 效率低的解法
      */
     public static long slowFibonacci(int n){

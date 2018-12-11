@@ -20,7 +20,6 @@ public class Question10_2 {
         int f = 0;
         for (int i = 2; i <= n; i++) {
             f = 2 * f1;
-
             f1 = f;
         }
         return f;

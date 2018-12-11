@@ -1,31 +1,51 @@
 public class Question11_1 {
+    /**
+     * leetcode 154. 寻找旋转排序数组中的最小值 II
+     * 注意数组中可能存在重复的元素。
+     * 假设按照升序排序的数组在预先未知的某个点上进行了旋转。
+     */
+    //leetcode
     public int findMin(int[] nums) {
-        if(nums.length == 1)
-            return nums[0];
-        int index1 = 0;
-        int index2 = nums.length - 1;
-        int indexMid = index1;
-        while(nums[index1] >= nums[index2]){
-            if(index2 - index1 == 1){
-                indexMid = index2;
-                break;
-            }
-            indexMid = (index1 + index2) / 2;
-            if(nums[index1] == nums[index2] &&
-                    nums[indexMid] == nums[index1])
-                return minInOrder(nums, index1, index2);
+        int lo = 0, hi = nums.length - 1;
+        int mid = 0;
+        while (lo < hi) {
+            mid = (lo + hi) >> 1;
 
-            if(nums[indexMid] >= nums[index1])
-                index1 = indexMid;
-            else if(nums[indexMid] <= nums[index2])
-                index2 = indexMid;
+            if (nums[mid] > nums[hi])
+                lo = mid + 1;
+            else if (nums[mid] < nums[hi])
+                hi = mid;
+            else // when num[mid] and num[hi] are same
+                hi--;
         }
-        return nums[indexMid];
+        return nums[lo];
     }
 
-    private int minInOrder(int[] nums, int index1, int index2){
-        int res = nums[index1];
-        for(int i = index1 + 1; i <= index2; i++){
+    //剑指offer
+    public int findMin2(int[] nums) {
+        int lo = 0, hi = nums.length - 1;
+        int mid = lo;
+        while (nums[lo] >= nums[hi]) {
+            if(hi - lo == 1){
+                mid = hi;
+                break;
+            }
+
+            mid = (lo + hi) / 2;
+            if(nums[lo] == nums[hi] && nums[mid] == nums[lo])
+                return minInOrder(nums, lo, hi);
+
+            if(nums[mid] >= nums[lo])
+                lo = mid;
+            else if(nums[mid] <= nums[hi])
+                hi = mid;
+        }
+        return nums[mid];
+    }
+
+    private int minInOrder(int[] nums, int lo, int hi) {
+        int res = nums[lo];
+        for (int i = lo + 1; i <= hi; i++) {
             if(res > nums[i])
                 res = nums[i];
         }

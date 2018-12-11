@@ -1,5 +1,3 @@
-import java.math.BigInteger;
-
 public class Question17 {
     public void Print1ToMaxOfNDigits(int n) {
         if (n <= 0)
