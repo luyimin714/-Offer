@@ -1,10 +1,10 @@
 public class Question18_1 {
-    /****************************************************************
+    /**
      *  删除链表中重复的结点
      *  在一个排序的链表中，存在重复的结点，请删除该链表中重复的结点，
      *  重复的结点不保留，返回链表头指针。 例如，链表1->2->3->3->4->4->5
      *  处理后为 1->2->5
-     ****************************************************************/
+     */
     //leetcode
     public ListNode deleteDuplicates2(ListNode pHead) {
         if(pHead == null) return null;
@@ -18,7 +18,7 @@ public class Question18_1 {
             while (cur.next != null && cur.val == cur.next.val) {
                 cur=cur.next;
             }
-            if (pre.next == cur) { //不是重复节点
+            if (pre.next == cur) {  //不是重复节点
                 pre = pre.next;
             } else {
                 pre.next = cur.next;
@@ -59,28 +59,5 @@ public class Question18_1 {
             }
         }
         return dummy.next;
-    }
-
-    public static void main(String[] args) {
-        ListNode head = new ListNode(1);
-        head.next = new ListNode(2);
-        head.next.next = new ListNode(3);
-        head.next.next.next = new ListNode(3);
-        head.next.next.next.next = new ListNode(4);
-        head.next.next.next.next.next = new ListNode(4);
-        head.next.next.next.next.next.next = new ListNode(5);
-        ListNode cur = head;
-        while (cur != null) {
-            System.out.print(cur.val + "->");
-            cur = cur.next;
-        }
-        System.out.println();
-        Question18_1 test = new Question18_1();
-        head = test.deleteDuplicates(head);
-        cur = head;
-        while (cur != null) {
-            System.out.print(cur.val + "->");
-            cur = cur.next;
-        }
     }
 }
