@@ -6,11 +6,9 @@ public class LCSs {
      * 则这两个字符串的最长公共子序列长度为4，最长公共子序列是：BCBA
      */
 
-    /**
-     *           0,                      i=0 || j=0
-     *  c[i,j] = c[i-1,j-1] + 1,         i,j>0 && A[i]=B[j]
-     *           max(c[i-1,j],c[i,j-1]), i,j>0 && A[i]!=B[j]
-     */
+     //           0,                      i=0 || j=0
+     //  c[i,j] = c[i-1,j-1] + 1,         i,j>0 && A[i]=B[j]
+     //           max(c[i-1,j],c[i,j-1]), i,j>0 && A[i]!=B[j]
     public int LongestCommonSubsequence(String A, int n, String B, int m) {
         int[][] c = new int[n + 1][m + 1];
         for (int i = 1; i <= n; i++) {
@@ -29,11 +27,9 @@ public class LCSs {
      *
      */
 
-    /**
-     *           0,                      i=0 || j=0
-     *  c[i,j] = c[i-1,j-1] + 1,         i,j>0 && A[i]=B[j]
-     *           0,                      i,j>0 && A[i]!=B[j]
-     */
+     //           0,                      i=0 || j=0
+     //  c[i,j] = c[i-1,j-1] + 1,         i,j>0 && A[i]=B[j]
+     //           0,                      i,j>0 && A[i]!=B[j]
     public int LongestCommonSubstring(String A, int n, String B, int m) {
         int[][] c = new int[n + 1][m + 1];
         int max = 0;
