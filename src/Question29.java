@@ -2,20 +2,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Question29 {
-    /*
+    /**
      *  顺时针打印矩阵
      *  输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字
      */
+
+    //leetcode
     public List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> list = new ArrayList<>();
 
-        if (matrix.length == 0)
-            return list;
+        if (matrix.length == 0) return list;
 
-        int rowBegin = 0;
-        int rowEnd = matrix.length - 1;
-        int colBegin = 0;
-        int colEnd = matrix[0].length - 1;
+        int rowBegin = 0, rowEnd = matrix.length - 1;
+        int colBegin = 0, colEnd = matrix[0].length - 1;
 
         while (rowBegin <= rowEnd && colBegin <= colEnd) {
             for (int i = colBegin; i <= colEnd; i++) {
@@ -46,6 +45,7 @@ public class Question29 {
         return list;
     }
 
+    //剑指offer
     public List<Integer> spiralOrder2(int[][] matrix) {
         List<Integer> list = new ArrayList<>();
 

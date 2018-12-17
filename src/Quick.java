@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.Stack;
 
 public class Quick {
-    /*
+    /**
      * 快速排序
      */
 
@@ -17,9 +17,12 @@ public class Quick {
     //非递归
     public static void sort2(int[] nums, int lo, int hi) {
         if (hi <= lo) return;
+
         Stack<Integer> stack = new Stack<>();
+
         stack.push(lo);
         stack.push(hi);
+
         while (!stack.empty()) {
             hi = stack.pop(); // 先弹出high,再弹出low
             lo = stack.pop();

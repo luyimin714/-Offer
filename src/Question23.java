@@ -74,8 +74,7 @@ public class Question23 {
 
         ListNode fast = slow.next;
         while (slow != null && fast != null) {
-            if (slow == fast)
-                return slow;
+            if (slow == fast) return slow;
 
             slow = slow.next;
             fast = fast.next;
