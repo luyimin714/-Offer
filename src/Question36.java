@@ -1,9 +1,10 @@
 public class Question36 {
-    /*
-     * 二叉搜索树与双向链表
+    /**
+     *              二叉搜索树与双向链表
      * 输入一棵二叉搜索树，将该二叉搜索树转换成一个排序的双向链表。
      * 要求不能创建任何新的结点，只能调整树中结点指针的指向。
      */
+
     //正确
     private TreeNode pre = null;
     public TreeNode Convert(TreeNode root) {
@@ -16,18 +17,15 @@ public class Question36 {
     //利用二叉树中序遍历
     private void helper(TreeNode cur) {
         if (cur != null) {
-            if (cur.left != null) { //不加判断也可以
-                helper(cur.left);
-            }
+            helper(cur.left);
+
             //do something
             cur.left = pre;
             if (pre != null)
                 pre.right = cur;
             pre = cur;
 
-            if (cur.right != null) { //不加判断也可以
-                helper(cur.right);
-            }
+            helper(cur.right);
         }
     }
 

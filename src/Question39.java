@@ -6,9 +6,7 @@ public class Question39 {
      * 超过数组长度的一半，因此输出2。如果不存在则输出0。
      */
 
-    /*
-     * 解法1:根据数组特点找到的解法
-     */
+    //解法1:根据数组特点找到的解法
     public int majorityElement(int[] nums) {
         if (nums == null || nums.length <= 0) return 0;
 
@@ -29,9 +27,7 @@ public class Question39 {
         return res;
     }
 
-    /*
-     * 解法2:基于快速排序partition函数的解法
-     */
+    //解法2:基于快速排序partition函数的解法
     public int majorityElement2(int[] nums) {
         if (nums == null || nums.length <= 0) return 0;
 
@@ -68,6 +64,7 @@ public class Question39 {
 
         return isMoreThanHalf;
     }
+
     //快速排序的partition函数 算法第六版
     private int partition(int[] nums, int lo, int hi){
         if (lo == hi) return lo;
@@ -83,6 +80,7 @@ public class Question39 {
         swap(nums, lo, j);
         return j;
     }
+
     //快速排序的partition函数 剑指Offer
     private int partition2(int[] nums, int lo, int hi) {
         if (nums == null || nums.length <= 0 || lo < 0 || hi >= nums.length)
