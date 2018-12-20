@@ -4,8 +4,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class Question38 {
-    /*
-     * 字符串的排列
+    /**
+     *                    字符串的排列
      * 输入一个字符串,按字典序打印出该字符串中字符的所有排列。
      * 例如输入字符串abc,则打印出由字符a,b,c所能排列出来的所有字符串abc,acb,bac,bca,cab和cba。
      */
@@ -35,7 +35,7 @@ public class Question38 {
                 if (used[i] || (i > 0 && chars[i] == chars[i-1] && !used[i-1])) continue;
                 used[i] = true;
                 sb.append(chars[i]);
-                System.out.println(sb.toString());
+                //System.out.println(sb.toString());
                 backtrack(res, sb, chars, used);
                 used[i] = false;
                 sb.deleteCharAt(sb.length() - 1);
@@ -73,33 +73,9 @@ public class Question38 {
         chars[j] = temp;
     }
 
-    //求所有字符的组合
-    public void combination(char[] chars) {
-        if (chars == null || chars.length == 0) return;
-        StringBuilder str = new StringBuilder();
-        for (int i = 1; i <= chars.length; i++) {
-            combination(chars, 0, i, str);
-        }
-    }
-
-    private void combination(char[] chars, int begin, int m, StringBuilder str) {
-        if (m == 0) {
-            System.out.println(str);
-            return;
-        }
-        if (begin == chars.length)
-            return;
-
-        str.append(chars[begin]);
-        //求n-1个字符中长度为m-1的组合
-        combination(chars, begin + 1, m - 1, str);
-        str.deleteCharAt(str.length() - 1);
-        //求n-1个字符中长度为m的组合
-        combination(chars, begin + 1, m, str);
-    }
-
     public static void main(String[] args) {
         Question38 test = new Question38();
-        test.Permutation("aab");
+        ArrayList<String> a = test.Permutation("1223");
+        System.out.println(a);
     }
 }
