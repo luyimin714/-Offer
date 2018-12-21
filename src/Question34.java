@@ -38,7 +38,7 @@ public class Question34 {
     }
 
     //leetcode
-    private void helper2(TreeNode root, int sum, List<Integer> path, List<List<Integer>> res, int cur) {
+    private void helper2(TreeNode root, int sum, List<Integer> path, List<List<Integer>> res) {
         if (root == null) return;
 
         path.add(root.val);
@@ -49,8 +49,8 @@ public class Question34 {
             path.remove(path.size() - 1);
             return;
         } else {
-            helper2(root.left, sum-root.val, path, res, cur);
-            helper2(root.right, sum-root.val, path, res, cur);
+            helper2(root.left, sum-root.val, path, res);
+            helper2(root.right, sum-root.val, path, res);
         }
         path.remove(path.size() - 1);
     }

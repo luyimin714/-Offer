@@ -44,9 +44,9 @@ public class Question46 {
         }
         return dp[0];
     }
+
     /****************************************
      *  把数字翻译成字符串
-     *
      ****************************************/
     public int numDecodings3(String s) {
         if (s == null || s.length() == 0)
