@@ -5,9 +5,8 @@ public class Question51 {
      *  输入一个数组,求出这个数组中的逆序对的总数P。并将P对1000000007取模的结果输出。
      *  即输出P%1000000007
      ***************************************************************************/
-    /*
-     * 在归并排序的基础上修改
-     */
+
+    //在归并排序的基础上修改
     public int InversePairs(int [] nums) {
         if (nums == null || nums.length <= 0)
             return 0;
@@ -51,9 +50,8 @@ public class Question51 {
 
         return count;
     }
-    /*
-     * 修改后的版本
-     */
+
+    //修改后的版本
     public int InversePairs2(int [] nums) {
         if (nums == null || nums.length <= 0)
             return 0;
@@ -98,9 +96,9 @@ public class Question51 {
 
         return (left + right + count) % 1000000007;
     }
-    /*
-     * 剑指Offer
-     */
+
+
+    //剑指Offer
     public int inversePairs(int [] data) {
         if (data == null || data.length <= 0)
             return 0;
