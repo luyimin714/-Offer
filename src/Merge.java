@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class Merge {
     /**
-     * 归并排序1
+     * 归并排序1:从前向后归并
      */
     public static void sort(int[] nums) {
         int[] aux = new int[nums.length];
@@ -36,24 +36,13 @@ public class Merge {
 
         while (i <= mid) nums[k++] = aux[i++];
         while (j <= hi)  nums[k++] = aux[j++];
-//        for (int k = lo; k <= hi; k++) {
-//            if (i > mid)
-//                nums[k] = aux[j++];
-//            else if (j > hi)
-//                nums[k] = aux[i++];
-//            else if (aux[j] < aux[i])
-//                nums[k] = aux[j++];
-//            else
-//                nums[k] = aux[i++];
-//        }
     }
 
     /**
-     * 归并排序2
+     * 归并排序2:从后向前归并（统计逆序对）
      */
     public static void sort2(int [] nums) {
-        if (nums == null || nums.length <= 0)
-            return;
+        if (nums == null || nums.length <= 0) return;
 
         int[] copy = new int[nums.length];
         sort2(nums, copy, 0, nums.length - 1);
@@ -67,17 +56,17 @@ public class Merge {
         merge2(nums, copy, lo, mid, hi);
     }
 
-    private static void merge2(int[] nums, int[] copy, int start, int mid, int end) {
-        if (start == end) return;
+    private static void merge2(int[] nums, int[] copy, int lo, int mid, int hi) {
+        if (lo == hi) return;
 
-        int i = mid, j = end;
-        for (int k = start; k <= end; k++) {
+        int i = mid, j = hi;
+        for (int k = lo; k <= hi; k++) {
             copy[k] = nums[k];
         }
 
-        int k = end;
-        int count = 0;
-        while (i >= start && j >= mid + 1) {
+        int k = hi;
+        //int count = 0;
+        while (i >= lo && j >= mid + 1) {
             if (copy[i] > copy[j]) {
                 nums[k--] = copy[i--];
             } else {
@@ -85,16 +74,15 @@ public class Merge {
             }
         }
 
-        while (i >= start) nums[k--] = copy[i--];
+        while (i >= lo)      nums[k--] = copy[i--];
         while (j >= mid + 1) nums[k--] = copy[j--];
     }
 
     /**
-     * 归并排序3
+     * 归并排序3:将sort和merge合并为一个函数
      */
     public static void sort3(int [] nums) {
-        if (nums == null || nums.length <= 0)
-            return;
+        if (nums == null || nums.length <= 0) return;
 
         int[] copy = new int[nums.length];
 
@@ -113,8 +101,7 @@ public class Merge {
             copy[ii] = nums[ii];
         }
 
-        int i = mid;
-        int j = hi;
+        int i = mid, j = hi;
         int k = hi;
 
         while (i >= lo && j >= mid + 1) {
@@ -125,7 +112,7 @@ public class Merge {
             }
         }
 
-        while (i >= lo) nums[k--] = copy[i--];
+        while (i >= lo)      nums[k--] = copy[i--];
         while (j >= mid + 1) nums[k--] = copy[j--];
     }
 

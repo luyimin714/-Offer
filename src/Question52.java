@@ -1,15 +1,12 @@
 public class Question52 {
-    /*
+    /**
      *       两个链表的第一个公共结点
      * 输入两个链表，找出它们的第一个公共结点。
      */
 
-    /*
-     * 解法1
-     */
+    // leetcode
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        if (headA == null || headB == null)
-            return null;
+        if (headA == null || headB == null) return null;
 
         ListNode a = headA;
         ListNode b = headB;
@@ -20,9 +17,8 @@ public class Question52 {
         return a;
     }
 
-    /*
-     * 解法2
-     */
+
+    //剑指offer
     public ListNode getIntersectionNode2(ListNode headA, ListNode headB) {
         int lengthA = getListLength(headA);
         int lengthB = getListLength(headB);

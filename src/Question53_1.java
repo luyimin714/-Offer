@@ -1,48 +1,51 @@
 public class Question53_1 {
-    /*
-     * 0 ~ n-1 中缺失的数字
+    /**
+     *          0 ~ n-1 中缺失的数字
+     * 一个长度为n-1的递增排序数组中的所有数字都是唯一的，
+     * 并且每个数字都在范围0到n-1之内。在范围0到n-1的n个数
+     * 字中有且只有一个数字不在该数组中，请找出这个数字。
      */
     public static int getMissingNumber(int[] nums) {
-        if (nums == null || nums.length <= 0)
-            return 0;
+        if (nums == null || nums.length <= 0) return 0;
 
-        int left = 0;
-        int right = nums.length - 1;
-        while (left <= right) {
-            int mid = (left + right) >> 1;
+        int lo = 0, hi = nums.length - 1;
+
+        while (lo <= hi) {
+            int mid = (lo + hi) >> 1;
             if (nums[mid] != mid) {
                 if (mid == 0 || nums[mid - 1] == mid - 1)
                     return mid;
-                right = mid - 1;
+                hi = mid - 1;
             } else {
-                left = mid + 1;
+                lo = mid + 1;
             }
         }
 
-        if (left == nums.length)
-            return nums.length;
+        if (lo == nums.length) return nums.length;
 
         return -1;
     }
 
-    /*
-     * 数组中值和下标相等的元素
+    /**
+     *           数组中值和下标相等的元素
+     * 假设一个单调递增的数组里的每个元素都是整数并且是唯一的。
+     * 请编程实现一个函数找出数组中任意一个数值等于其下标的元素。
+     * 例如，在数组{-3, -1, 1, 3, 5}中，数字3和它的下标相等。
      */
     public static int getNumberSameAsIndex(int[] nums) {
-        if (nums == null || nums.length <= 0)
-            return -1;
+        if (nums == null || nums.length <= 0) return -1;
 
-        int left = 0;
-        int right = nums.length - 1;
-        while (left <= right) {
-            int mid = (left + right) >> 1;
+        int lo = 0, hi = nums.length - 1;
+
+        while (lo <= hi) {
+            int mid = (lo + hi) >> 1;
             if (nums[mid] == mid)
                 return mid;
 
             if (nums[mid] < mid)
-                left = mid + 1;
+                lo = mid + 1;
             else
-                right = mid - 1;
+                hi = mid - 1;
         }
 
         return -1;

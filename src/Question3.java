@@ -8,8 +8,8 @@ public class Question3 {
      * 例如，如果输入长度为7的数组{2,3,1,0,2,5,3}，那么对应的输出是第一个重复的数字2。
      */
     public boolean duplicate(int[] nums, int length, int[] duplication) {
-        if (nums == null || length <= 0)
-            return false;
+        if (nums == null || length <= 0) return false;
+
         for (int num : nums)
             if (num < 0 || num > length - 1)
                 return false;

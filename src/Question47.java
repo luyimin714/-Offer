@@ -29,7 +29,7 @@ public class Question47 {
      * 的右下角。给定一个棋盘及其上面的礼物，请计算你最多能拿到多少价值的礼物？
      */
 
-    // f[i,j] = max(f[i-1,j],f[i,j-1])+gift[i,j]
+    // f[i,j] = max(f[i-1,j],f[i,j-1]) + gift[i,j]
     public int maxPathSum(int[][] grid) {
         int rows = grid.length;
         int cols = grid[0].length;

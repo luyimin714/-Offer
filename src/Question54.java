@@ -1,16 +1,15 @@
 import java.util.Stack;
 
 public class Question54 {
-    /************************************************************
-     *                  二叉搜索树的第k个结点
+    /**
+     *         二叉搜索树的第k个结点
      * 给定一棵二叉搜索树，请找出其中的第k小的结点。例如，
-     * （5，3，7，2，4，6，8）中，按结点数值大小顺序第三小结点的值为4。
-     ************************************************************/
-
-    /*
-     * LeetCode
+     * （5，3，7，2，4，6，8）中，按结点数值大小顺序第三
+     * 小结点的值为4。
      */
-    //递归
+
+    //递归(基于二叉树的中序遍历) leetCode
+    //二叉搜索树的中序遍历序列是递增排序的
     private static int number = 0;
     private static int count = 0;
     public int kthSmallest(TreeNode root, int k) {
@@ -19,19 +18,18 @@ public class Question54 {
         return number;
     }
 
-    private void helper(TreeNode node) {
-        if (node.left != null)
-            helper(node.left);
+    private void helper(TreeNode cur) {
+        if (cur != null) {
+            helper(cur.left);
 
-        count--;
+            count--;
+            if (count == 0) {
+                number = cur.val;
+                return;
+            }
 
-        if (count == 0) {
-            number = node.val;
-            return;
+            helper(cur.right);
         }
-
-        if (node.right != null)
-            helper(node.right);
     }
 
     //迭代(基于二叉树的中序遍历)
@@ -60,16 +58,11 @@ public class Question54 {
         return res;
     }
 
-    /*
-     * 剑指Offer
-     */
+    //剑指Offer
     private static int kk = 0;
     public TreeNode kthNode(TreeNode root, int k) {
-        if (root == null || k == 0)
-            return null;
-
+        if (root == null || k == 0) return null;
         kk = k;
-
         return kthNodeCore(root);
     }
 
@@ -82,7 +75,6 @@ public class Question54 {
         if (target == null) {
             if (kk == 1)
                 target = root;
-
             kk--;
         }
 
