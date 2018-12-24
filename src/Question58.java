@@ -1,10 +1,10 @@
 public class Question58 {
-    /*
-     *   给定一个字符串，逐个翻转字符串中的每个单词。
+    /**
+     *          翻转单词顺序列
+     * 给定一个字符串，逐个翻转字符串中的每个单词。
      */
     public String reverseWords(String s) {
-        if (s == null)
-            return null;
+        if (s == null) return null;
 
         char[] chars = s.toCharArray();
         int n = chars.length;
@@ -15,13 +15,21 @@ public class Question58 {
         return cleanSpaces(chars, n);
     }
 
-    private void reverseWords(char[] chars, int n) {
-        int begin = 0, end = 0;
+    private void reverse(char[] chars, int i, int j) {
+        while (i < j) {
+            char temp = chars[i];
+            chars[i++] = chars[j];
+            chars[j--] = temp;
+        }
+    }
 
-        while (begin < n) {
-            while (begin < end || begin < n && chars[begin] == ' ') begin++;
-            while (end < begin || end < n && chars[end] != ' ') end++;
-            reverse(chars, begin, end - 1);
+    private void reverseWords(char[] chars, int n) {
+        int lo = 0, hi = 0;
+
+        while (lo < n) {
+            while (lo < hi || lo < n && chars[lo] == ' ') lo++;
+            while (hi < lo || hi < n && chars[hi] != ' ') hi++;
+            reverse(chars, lo, hi - 1);
         }
     }
 
@@ -36,14 +44,6 @@ public class Question58 {
         }
 
         return new String(chars).substring(0, i);
-    }
-
-    private void reverse(char[] chars, int i, int j) {
-        while (i < j) {
-            char temp = chars[i];
-            chars[i++] = chars[j];
-            chars[j--] = temp;
-        }
     }
 
     public static void main(String[] args) {
