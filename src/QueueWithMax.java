@@ -2,10 +2,16 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 public class QueueWithMax<T extends Comparable> {
-    private Deque<InternelData<T>> data;
-    private Deque<InternelData<T>> maximums;
+    /**
+     *          队列的最大值
+     * 请定义一个队列并实现函数max得到队列里的最大值，要求函数max、
+     * push_back和pop_front的时间复杂度都是O(1)。
+     */
+    private Deque<InternalData<T>> data;
+    private Deque<InternalData<T>> maximums;
     private int currentIndex;
-    private QueueWithMax() {
+
+    public QueueWithMax() {
         this.data = new ArrayDeque<>();
         this.maximums = new ArrayDeque<>();
         this.currentIndex = 0;
@@ -14,16 +20,15 @@ public class QueueWithMax<T extends Comparable> {
     public void push_back(T number) {
         while (!maximums.isEmpty() && number.compareTo(maximums.getLast().number) >= 0)
             maximums.pollLast();
-        InternelData<T> internelData = new InternelData<>(number, currentIndex);
-        data.addLast(internelData);
-        maximums.addLast(internelData);
+        InternalData<T> internalData = new InternalData<>(number, currentIndex);
+        data.addLast(internalData);
+        maximums.addLast(internalData);
 
         currentIndex++;
     }
 
     public void pop_front() {
-        if (maximums.isEmpty())
-            return;
+        if (maximums.isEmpty()) return;
 
         if (maximums.getFirst().index == data.getFirst().index)
             maximums.pollFirst();
@@ -37,10 +42,10 @@ public class QueueWithMax<T extends Comparable> {
         return maximums.getFirst().number;
     }
 
-    private static class InternelData<T extends Comparable> {
+    private static class InternalData<T extends Comparable> {
         T number;
         int index;
-        InternelData(T number, int index) {
+        InternalData(T number, int index) {
             this.number = number;
             this.index = index;
         }
@@ -63,6 +68,5 @@ public class QueueWithMax<T extends Comparable> {
         System.out.println(queue.max());
         queue.pop_front();
         System.out.println(queue.max());
-
     }
 }
