@@ -1,14 +1,13 @@
 public class Question67 {
-    /*
-     * 把字符串转换成整数
+    /**
+     *                把字符串转换成整数
      * 将一个字符串转换成一个整数(实现Integer.valueOf(string)的功能，
      * 但是string不符合数字要求时返回0)，要求不能使用字符串转换整数的
      * 库函数。 数值为0或者字符串不是一个合法的数值则返回0。
      */
-    /*
-     * LeetCode
-     */
-    public static int myAtoi(String str) {
+
+    //LeetCode
+    public int myAtoi(String str) {
         long num = 0;
         int index = 0, sign = 1;
         if (str.length() == 0) return 0;
@@ -37,10 +36,8 @@ public class Question67 {
         return sign * (int) num;
     }
 
-    /*
-     * 剑指Offer
-     */
-    public static int StrToInt(String str) {
+    //剑指Offer
+    public int StrToInt(String str) {
         long num = 0;
         char[] s = str.toCharArray();
 
@@ -84,5 +81,13 @@ public class Question67 {
         }
 
         return num;
+    }
+
+    public static void main(String[] args) {
+        Question67 test = new Question67();
+        System.out.println(test.myAtoi("-91283472332"));
+        System.out.println(Integer.MIN_VALUE);
+        System.out.println(Integer.MAX_VALUE);
+        System.out.println(912834723 * 10 + 3);
     }
 }
