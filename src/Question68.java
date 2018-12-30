@@ -1,6 +1,6 @@
 public class Question68 {
-    /*
-     *          二叉树的最近公共祖先
+    /**
+     *    二叉树的最近公共祖先(Lowest Common Ancestor,LCA)
      * 若p和q要么分别位于左右子树中，那么对左右子结点调用递归函数，
      * 会分别返回p和q结点的位置，而当前结点正好就是p和q的最小共同
      * 父结点，直接返回当前结点即可，这就是题目中的例子1的情况。
@@ -21,5 +21,15 @@ public class Question68 {
         TreeNode right = lowestCommonAncestor(root.right, p, q);
         if (left != null && right != null) return root;
         return left == null ? right : left;
+    }
+
+    /**
+     *              二叉搜索树的最近公共祖先
+     * 给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。
+     */
+    public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
+        while ((root.val - p.val) * (root.val - q.val) > 0)
+            root = p.val < root.val ? root.left : root.right;
+        return root;
     }
 }

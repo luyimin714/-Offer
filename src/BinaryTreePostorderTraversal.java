@@ -35,7 +35,7 @@ public class BinaryTreePostorderTraversal {
         while (cur != null || !stack.empty()) {
             while (cur != null) {
                 stack.push(cur);
-                list.addFirst(cur.val);
+                list.addFirst(cur.val); //ArrayList add(0, cur.val)
                 cur = cur.right;
             }
 
