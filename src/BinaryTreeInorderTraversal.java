@@ -14,14 +14,14 @@ public class BinaryTreeInorderTraversal {
         return list;
     }
 
-    private void helper(TreeNode cur, List<Integer> inorder) {
+    private void helper(TreeNode cur, List<Integer> list) {
         if (cur != null) {
-            helper(cur.left, inorder);
+            helper(cur.left, list);
 
             //do something
-            inorder.add(cur.val);
+            list.add(cur.val);
 
-            helper(cur.right, inorder);
+            helper(cur.right, list);
         }
     }
 
